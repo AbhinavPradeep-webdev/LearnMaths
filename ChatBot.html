@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>
+      Chat Bot
+    </title>
+    <script>
+      know = {
+
+        "Hello" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Hi there!",
+        "hello" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Hi there!",
+        "HELLO" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Hi there!",
+        "Who are you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am Abhinav's Assistant",
+        "How are you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am Fine",
+        "How old are you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am infinity in age",
+        "how old are you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am infinity in age",
+        "who are you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am Abhinav's Assistant",
+        "who are you ?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am Abhinav's Assistant",
+        "Who are you ?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am Abhinav's Assistant",
+        "How old are you ?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am infinity in age",
+        "HOW OLD ARE YOU ?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am infinity in age",
+        "how are you ?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am Fine...You?",
+        "How are you ?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am Fine...You?",
+        "Fine" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp That's Great ",
+        "fine" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp That's Great ",
+        "I am fine" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp That's Great ",
+        "I am Fine" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp That's Great ",
+        "Who created you ?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  I was created by Abhinav Pradeep on 10th March 2021 ",
+        "who created you ?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  I was created by Abhinav Pradeep on 10th March 2021 ",
+        "Who created you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  I was created by Abhinav Pradeep on 10th March 2021 ",
+        "who created you?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  I was created by Abhinav Pradeep on 10th March 2021 ",
+        "what can you do?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  I can do anything...But I only understand the command taught to me by Abhinav Pradeep. ",
+        "What can you do?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  I can do anything...But I only understand the command taught to me by Abhinav Pradeep. ",
+        "what can you do?" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  I can do anything...But I only understand the command taught to me by Abhinav Pradeep.",
+        "Play music" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Copy the link and paste on new tab to listen music-https://music.youtube.com/ ",
+        "play music" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Copy the link and paste on new tab to listen music-https://music.youtube.com/ ",
+        "PLAY MUSIC" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Copy the link and paste on new tab to listen music-https://music.youtube.com/ ",
+        "about creator" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Will be available soon! ",
+        "About creator" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Will be available soon!",
+        "ABOUT CREATOR" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  Will be available soon!",
+        "Play Game" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Hmm.....To play game go to homepage and click on take a break",
+        "Bye" : "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp It was nice talking to you....Bye!",
+        
+        
+        
+        
+        
+
+
+      };
+
+      function talk() {
+        var user = document.getElementById("userBox").value;
+        document.getElementById("userBox").value= "";
+        document.getElementById("chatLog").innerHTML += user+"<br>";
+
+        if (user in know) {
+          document.getElementById("chatLog").innerHTML += know[user] + "<br>";
+        } else 
+
+        {
+          document.getElementById("chatLog").innerHTML += "I don't understand...Try using what can you do? or About the creator or Play Game or Play music <br>";
+        }
+      }
+
+
+
+
+
+    </script>
+
+
+
+  </head>
+
+
+  <body
+        bgcolor="#00cc9c">
+    <img src="https://miro.medium.com/max/800/0*oz2e-hQtsHOWzoB4.">
+
+    <p id="chatLog"> - - ChatBot By Abhinav Pradeep - - <br> </p>
+
+    <input id="userBox" type="text" onkeydown="if(event.keyCode == 13) {talk()}">
+    <br>
+    <br>
+    
+    <button><a href="Index.html">Return to Home Page</a></Button>
+
+  </body>
+
+
+
+</html>
