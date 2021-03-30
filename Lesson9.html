@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      div#test{ border:#000 1px solid; padding:10px 40px 40px 40px; }
+    </style>
+    <script>
+      var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+      var questions = [
+        [ "  An algebraic expression that contains only one term is called:", "Monomial", "Binomial", " trinomial", "A" ],
+        [ "  In which of the following, the two expressions are like terms?", " 7x and 7x square", " 7x and 9x", " 7x and 7xy", "B" ],
+        [ " If we add, 7xy + 5yz – 3zx, 4yz + 9zx – 4y and –3xz + 5x – 2xy, then the answer is:", " 5xy + 9yz +3zx + 5x – 4y ", "  5xy + 10yz +3zx + 15x – 4y", " . 5xy – 9yz +3zx – 5x – 4y", "A" ],
+        [ " The volume of a rectangle with length, breadth and height as 5x, 3x2 and 7x4 respectively is:", "105x raise to 2", " 105x raise to 4 ", " 105x raise to 7", "C" ]
+
+      ];
+      function _(x){
+        return document.getElementById(x);
+      }
+      function renderQuestion(){
+        test = _("test");
+        if(pos >= questions.length){
+          test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+          _("test_status").innerHTML = "Test Completed";
+          pos = 0;
+          correct = 0;
+          return false;
+        }
+        _("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+        question = questions[pos][0];
+        chA = questions[pos][1];
+        chB = questions[pos][2];
+        chC = questions[pos][3];
+        test.innerHTML = "<h3>"+question+"</h3>";
+        test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+        test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+        test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+        test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+      }
+      function checkAnswer(){
+        choices = document.getElementsByName("choices");
+        for(var i=0; i<choices.length; i++){
+          if(choices[i].checked){
+            choice = choices[i].value;
+          }
+        }
+        if(choice == questions[pos][4]){
+          correct++;
+        }
+        pos++;
+        renderQuestion();
+      }
+      window.addEventListener("load", renderQuestion, false);
+    </script>
+  </head>
+  <body bgcolor="blue
+                 ">
+    <h2 id="test_status"></h2>
+    <div id="test"></div>
+  </body>
+</html>
